@@ -19,10 +19,15 @@ type (
 		Pop() T
 		Push(T)
 		Remove(int)
+		IndexOf(v T, cmp func(T, T) bool) int
 	}
 
 	CollectionOpt[T any] struct {
 		items []T
+	}
+
+	BaseType interface {
+		int | int8 | int16 | int32 | int64 | string | float32 | float64
 	}
 )
 
